@@ -1,15 +1,23 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions caching matrix inversion
 
-## Write a short comment describing this function
+## A function creating a matrix that cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
-
+                       c<-solve(x)
+        
+                       l<-list(c,x)
+                        l[[2]]
 }
 
 
-## Write a short comment describing this function
+## A function computing the matrix inverse or retrievivg it if calculated
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        c<-x[[1]]
+        if (is.matrix(c)) {
+                return (c)
+        }
+        data <- x
+        c <- solve(x,...)
+        c
 }
